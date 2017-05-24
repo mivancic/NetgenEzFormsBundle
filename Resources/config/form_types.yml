@@ -18,6 +18,8 @@ parameters:
     netgen.ezforms.form.data_mapper.info_collection.class: Netgen\Bundle\EzFormsBundle\Form\DataMapper\InformationCollectionMapper
     netgen.ezforms.form.type.info_collection.class: Netgen\Bundle\EzFormsBundle\Form\Type\InformationCollectionType
 
+    netgen.ezforms.form.type.xml_text.class: Netgen\Bundle\EzFormsBundle\Form\Type\XmlTextType
+
 services:
     netgen.ezforms.form.data_mapper.create_content:
         class: "%netgen.ezforms.form.data_mapper.create_content.class%"
@@ -95,3 +97,8 @@ services:
             - [setLanguages, [$languages$]]
         tags:
             - {name: form.type, alias: ezforms_information_collection}
+
+    netgen.ezforms.form.type.xml_text:
+        class: '%netgen.ezforms.form.type.xml_text.class%'
+        tags:
+            - { name: form.type, alias: ezforms_xml }
